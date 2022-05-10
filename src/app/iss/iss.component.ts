@@ -17,22 +17,17 @@ export class ISSComponent implements OnInit {
   bodyTag:HTMLBodyElement = document.getElementsByTagName('body')[0];
 
   ngOnInit(): void {
-      this.ISSServiceService.getData().subscribe(
+    this.ISSServiceService.getData().subscribe(
       (visibility)=>(
         this.Visibility=visibility.visibility
       )
     );
-
-    this.rederer.addClass(document.body,'body-class');
-    delay(10000);
   }
 
   GetData()
   {
-    debugger;
     switch(this.Visibility)
     {
-
       case 'daylight':
         {
           this.bodyTag.style.backgroundColor='yellow';
@@ -49,7 +44,6 @@ export class ISSComponent implements OnInit {
          break;
        }
     }
-
   }
 
 }
